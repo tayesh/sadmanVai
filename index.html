@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .body {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.788)), url(26fed1108e9f0fba6459d29e044a964d.jpg);
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        img {
+            position: absolute;
+            bottom: 400px;
+            left: 645px;
+            width: 250px;
+            z-index: 1;
+        }
+
+        .circle {
+            position: absolute;
+            left: 640px;
+            bottom: 425.5px;
+            ;
+            width: 255px;
+            height: 255px;
+            background-color: black;
+            border-radius: 100%;
+            z-index: 2;
+            
+        }
+
+        .butn {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+        button {
+            margin-top: 400px;
+            width: 200px;
+            height: 50px;
+            border-radius: 20px;
+            background-color: rgba(56, 9, 132, 0.639);
+            border: none;
+            color: aliceblue;
+            font-size: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @media only screen and (max-width: 575px) {
+            .body {
+                background-position: center;
+            }
+
+            img {
+                bottom: 55.5vh;
+                left: 22vw;
+                width: 210px;
+            }
+
+            .circle {
+                position: absolute;
+                bottom: 57vh;
+                left:19vw;
+                
+                width: 245px;
+                height: 245px;
+                background-color: black;
+                border-radius: 100%;
+                z-index: 2;
+                transition: bottom 2s, left 2s;
+                
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div>
+            <div id="circle" class="circle">
+
+            </div>
+            <img src="matha.png" alt="">
+        </div>
+        <div class="butn" onclick="move()">
+            <button>Click !!!</button>
+        </div>
+    </div>
+    <script>
+        function hide(element) {
+            element.style.display = 'none';
+        }
+        function move() {
+            var elements = document.querySelectorAll('.circle');
+            elements.forEach(function (element) {
+                element.style.bottom = '640px';
+                element.style.left = '385px';
+                element.style.transition="left 2s, bottom 2s";
+                element.addEventListener('transitionend', function () {
+                    element.style.display = 'none';
+                });
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>
